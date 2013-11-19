@@ -149,5 +149,6 @@ class Worksheet(object):
 					style = None
 				else:
 					style = self._styles[x][y]
-				row_data.append(self.__get_cell_data(cell, x, y, style))
+				if cell is not None:
+					row_data.append(self.__get_cell_data(cell, x, y, style))
 			yield x, row_data
